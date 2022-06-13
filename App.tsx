@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home } from './src/pages/home';
+import { Signin } from './src/pages/Signin';
 import { ThemeProvider } from 'styled-components';
 import theme from './src/global/styles/theme';
 import AppLoading from 'expo-app-loading';
@@ -21,7 +21,7 @@ const App: React.FC = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Home />
+      <Signin />
     </ThemeProvider>
   );
 };

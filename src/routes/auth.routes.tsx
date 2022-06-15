@@ -12,7 +12,7 @@ export const AuthRoutes: React.FC = () => {
       screenOptions={{ headerShown: false }}
     >
       <Auth.Screen name="SignIn" component={SignIn} />
-      <Auth.Screen name="SignUp" component={SignIn} />
+      <Auth.Screen name="SignUp" component={SignUp} />
     </Auth.Navigator>
   );
 };

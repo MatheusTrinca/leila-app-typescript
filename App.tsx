@@ -1,8 +1,9 @@
 import React from 'react';
-import { Signin } from './src/pages/Signin';
+import { Routes } from './src/routes';
 import { ThemeProvider } from 'styled-components';
 import theme from './src/global/styles/theme';
 import AppLoading from 'expo-app-loading';
+import { NavigationContainer } from '@react-navigation/native';
 import {
   useFonts,
   Roboto_400Regular,
@@ -20,9 +21,11 @@ const App: React.FC = () => {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <Signin />
-    </ThemeProvider>
+    <NavigationContainer>
+      <ThemeProvider theme={theme}>
+        <Routes />
+      </ThemeProvider>
+    </NavigationContainer>
   );
 };
 

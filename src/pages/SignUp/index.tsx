@@ -4,7 +4,7 @@ import { Button } from '../../components/form/Button';
 import { Input } from '../../components/form/Input';
 import { Container, Content, Title } from './styles';
 
-export const Signin: React.FC = () => {
+export const SignUp: React.FC = () => {
   return (
     <ScrollView
       keyboardShouldPersistTaps="handled"
@@ -13,6 +13,7 @@ export const Signin: React.FC = () => {
       <Container>
         <Content>
           <Title>Faça seu Login</Title>
+          <Input placeholder="Nome Completo" />
           <Input placeholder="Email" />
           <Input placeholder="Senha" />
           <Button title="Entrar" />

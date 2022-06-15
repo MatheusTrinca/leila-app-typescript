@@ -3,6 +3,7 @@ package com.devprofile;
 import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.os.Bundle;
 import androidx.annotation.NonNull;
 
 import com.facebook.react.PackageList;
@@ -102,5 +103,9 @@ public class MainApplication extends Application implements ReactApplication {
         e.printStackTrace();
       }
     }
+  }
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
   }
 }

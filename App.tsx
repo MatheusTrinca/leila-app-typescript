@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import theme from './src/global/styles/theme';
 import AppLoading from 'expo-app-loading';
 import { NavigationContainer } from '@react-navigation/native';
+import { StatusBar } from 'expo-status-bar';
 import {
   useFonts,
   RobotoSlab_400Regular,
@@ -25,6 +26,7 @@ const App: React.FC = () => {
       <ThemeProvider theme={theme}>
         <Routes />
       </ThemeProvider>
+      <StatusBar style="light" />
     </NavigationContainer>
   );
 };

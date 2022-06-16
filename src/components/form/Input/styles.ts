@@ -7,7 +7,7 @@ export const Container = styled.View`
   width: 100%;
   padding: 16px 18px;
   background-color: ${({ theme }) => theme.colors.gray800};
-  border-radius: 8px;
+  border-radius: 10px;
   margin-bottom: 8px;
   flex-direction: row;
   align-items: center;

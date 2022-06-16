@@ -3,7 +3,8 @@ import { ScrollView, KeyboardAvoidingView, Platform, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useForm, FieldValues } from 'react-hook-form';
 import { Button } from '../../components/form/Button';
-import { Input } from '../../components/form/Input';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 import { Logo } from '../SignIn/styles';
 import logo from '../../assets/logo.png';
 import {
@@ -18,20 +19,32 @@ import { InputControl } from '../../components/form/InputControl';
 
 interface ScreenNavigationProp {
   goBack: () => void;
+  navigate: (screen: string) => void;
 }
 
 interface IFormInputs {
   [name: string]: any;
 }
 
+const formSchema = yup.object({
+  name: yup
+    .string()
+    .max(100, 'Não exceda 100 caracteres')
+    .required('Informe um nome'),
+  email: yup.string().email('Email inválido').required('Informe um email'),
+  password: yup.string().required('Informe a senha'),
+});
+
 export const SignUp: React.FC = () => {
-  const { goBack } = useNavigation<ScreenNavigationProp>();
+  const { goBack, navigate } = useNavigation<ScreenNavigationProp>();
 
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<FieldValues>();
+  } = useForm<FieldValues>({
+    resolver: yupResolver(formSchema),
+  });
 
   const handleSignUp = (form: IFormInputs) => {
     const data = {
@@ -40,6 +53,7 @@ export const SignUp: React.FC = () => {
       password: form.password,
     };
     console.log(data);
+    navigate('SignUpSuccess');
   };
 
   return (
@@ -65,6 +79,7 @@ export const SignUp: React.FC = () => {
               icon="user"
               control={control}
               name="name"
+              error={errors.name && errors.name.message}
             />
             <InputControl
               autoCapitalize="none"
@@ -74,6 +89,7 @@ export const SignUp: React.FC = () => {
               icon="mail"
               control={control}
               name="email"
+              error={errors.email && errors.email.message}
             />
             <InputControl
               placeholder="Senha"
@@ -81,6 +97,7 @@ export const SignUp: React.FC = () => {
               control={control}
               name="password"
               secureTextEntry
+              error={errors.password && errors.password.message}
             />
             <Button title="Cadastrar" onPress={handleSubmit(handleSignUp)} />
           </Content>

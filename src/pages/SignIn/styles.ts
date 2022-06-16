@@ -12,21 +12,22 @@ export const Content = styled.View`
   flex: 1;
   width: 100%;
   align-items: center;
-  justify-content: center;
-  padding: 24px;
+  justify-content: flex-end;
+  margin-bottom: ${RFValue(120)}px;
+  padding: 0 30px;
 `;
 
 export const Title = styled.Text`
-  color: ${({ theme }) => theme.colors.light};
+  color: ${({ theme }) => theme.colors.white};
   font-size: ${RFValue(18)}px;
   font-family: ${({ theme }) => theme.fonts.regular};
   margin-bottom: 24px;
 `;
 
 export const Logo = styled(Image)`
-  width: ${RFValue(160)}px;
-  height: ${RFValue(160)}px;
-  margin-bottom: ${RFValue(64)}px;
+  width: ${RFValue(220)}px;
+  height: ${RFValue(220)}px;
+  margin-bottom: ${RFValue(40)}px;
 `;
 
 export const ForgotPasswordButton = styled(TouchableOpacity)`
@@ -34,7 +35,7 @@ export const ForgotPasswordButton = styled(TouchableOpacity)`
 `;
 
 export const ForgotPasswordTitle = styled.Text`
-  color: ${({ theme }) => theme.colors.gray500};
+  color: ${({ theme }) => theme.colors.light};
   font-size: ${RFValue(14)}px;
   font-family: ${({ theme }) => theme.fonts.regular};
 `;
@@ -46,21 +47,21 @@ export const CreateAccount = styled.TouchableOpacity`
   right: 0;
   padding: 16px 0;
   border-top-width: 1px;
-  border-top-color: ${({ theme }) => theme.colors.black};
-  background-color: ${({ theme }) => theme.colors.gray800};
+  border-top-color: ${({ theme }) => theme.colors.dark};
+  background-color: ${({ theme }) => theme.colors.black};
   flex-direction: row;
   justify-content: center;
   align-items: center;
 `;
 
 export const Icon = styled(Feather)`
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.light};
   font-size: ${RFValue(20)}px;
 `;
 
 export const CreateAccountTitle = styled.Text`
-  color: ${({ theme }) => theme.colors.gray500};
-  font-size: ${RFValue(18)}px;
+  color: ${({ theme }) => theme.colors.light};
+  font-size: ${RFValue(14)}px;
   font-family: ${({ theme }) => theme.fonts.regular};
   margin-left: 10px;
 `;

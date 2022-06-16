@@ -1,10 +1,17 @@
 import React from 'react';
-import { Container } from './styles';
+import { Container, InputText, Icon } from './styles';
 import theme from '../../../global/styles/theme';
 import { TextInputProps } from 'react-native';
 
-export const Input: React.FC<TextInputProps> = ({ ...otherProps }) => {
+interface InputProps extends TextInputProps {
+  icon: string;
+}
+
+export const Input: React.FC<InputProps> = ({ icon, ...otherProps }) => {
   return (
-    <Container placeholderTextColor={theme.colors.gray500} {...otherProps} />
+    <Container>
+      <Icon name={icon} />
+      <InputText placeholderTextColor={theme.colors.gray500} {...otherProps} />
+    </Container>
   );
 };

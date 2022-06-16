@@ -6,14 +6,14 @@ import AppLoading from 'expo-app-loading';
 import { NavigationContainer } from '@react-navigation/native';
 import {
   useFonts,
-  Roboto_400Regular,
-  Roboto_700Bold,
-} from '@expo-google-fonts/roboto';
+  RobotoSlab_400Regular,
+  RobotoSlab_500Medium,
+} from '@expo-google-fonts/roboto-slab';
 
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({
-    Roboto_400Regular,
-    Roboto_700Bold,
+    RobotoSlab_400Regular,
+    RobotoSlab_500Medium,
   });
 
   if (!fontsLoaded) {

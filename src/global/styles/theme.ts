@@ -1,19 +1,19 @@
 export default {
   colors: {
-    black: '#000',
+    black: '#28262E',
     white: '#fff',
-    primary: '#eba417',
+    primary: '#D80A86',
     primaryLight: '#ffdb77',
     secondary: '#79c7ff',
     success: '#12a454',
     danger: '#e83f5b',
     dark: '#121214',
-    light: '#f1f1f1',
-    gray500: '#a8a8b3',
-    gray800: '#29292e',
+    light: '#F4EDE8',
+    gray500: '#666360',
+    gray800: '#232129',
   },
   fonts: {
-    regular: 'Roboto_400Regular',
-    bold: 'Roboto_700Bold',
+    regular: 'RobotoSlab_400Regular',
+    medium: 'RobotoSlab_500Medium',
   },
 };
